@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CrudOpeartionwithMVC.Models.tblstudent>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayStudent</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Add record", "AddStudent")
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Roll no</th>
+                    <th>Name</th>
+                    <th>English</th>
+                    <th>Maths</th>
+                    <th>Science</th>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td>@s.rno</td>
+                        <td>@s.name</td>
+                        <td>@s.eng</td>
+                        <td>@s.math</td>
+                        <td>@s.sci</td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditStudent", new { @id = s.rno })
+                            &nbsp;
+                            @Html.ActionLink("Delete", "DeleteStudent", new { @id = s.rno })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

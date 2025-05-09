@@ -1,0 +1,51 @@
+﻿@model CrudOpeartionwithMVC.Models.tblstudent
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddStudent</title>
+</head>
+<body>
+    <div> 
+      @using (Html.BeginForm())
+            {
+
+          <table>
+              <tr>
+                  <td>Roll no</td>
+                  <td>@Html.TextBoxFor(e => e.rno)</td>
+              </tr>
+              <tr>
+                  <td>Name</td>
+                  <td>@Html.TextBoxFor(e => e.name)</td>
+              </tr>
+              <tr>
+                  <td>English</td>
+                  <td>@Html.TextBoxFor(e => e.eng)</td>
+              </tr>
+              <tr>
+                  <td>Maths</td>
+                  <td>@Html.TextBoxFor(e => e.math)</td>
+              </tr>
+              <tr>
+                  <td>Science</td>
+                  <td>@Html.TextBoxFor(e => e.sci)</td>
+              </tr>
+              <tr>
+                  <td>
+                      <input type="submit" value="Add"/>
+                  </td>
+                  <td>
+                      @Html.ActionLink("view","DisplayStudent")
+                  </td>
+              </tr>
+          </table>
+            }
+    </div>
+</body>
+</html>
